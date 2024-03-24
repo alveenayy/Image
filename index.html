@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image generator</title>
+</head>
+<style>
+    body{
+        background-color: rgb(210, 164, 164);
+    }
+    img{
+        width: 300px;
+        height: 300px;
+        display: none;
+    }
+    .card{
+        background-color: gray;
+        width: 50vw;
+        height: fit-content;
+        margin: 100px auto;
+        border-radius: 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
+    }
+
+    h3{
+        font-family: "poppins",sans-serif;
+        color: bisque;
+        font-size: 2rem;
+        text-align: center;
+    }
+    input{
+        width: 60%;
+        height: 30px;
+        background-color: cornsilk;
+        color: grey;
+        padding: 10px;
+        border-radius: 20px;
+ 
+     border: 2px solid bisque;
+    }
+    input:focus{
+        outline: none;
+    }
+    button{ 
+    
+        border-radius: 20px;
+        height: 40px;
+        width: fit-content;
+        padding: 10px;
+        color: bisque;
+     background-color: grey;
+     border: 2px solid bisque;
+   
+    }
+    button:active{
+        background-color: bisque;
+        color: grey;
+    
+    }
+    @media screen and (max-width: 800px) {
+     *{
+        overflow: hidden;
+     }
+        .card {
+       width:fit-content;
+       background-color: #808080;
+       
+        height:fit-content;
+    
+        padding: 10px;
+      
+        }}
+        @media screen and (max-width: 350px) {
+     *{
+        overflow: hidden;
+     }
+        .card {
+       width:80vw;
+       background-color: #808080;
+       margin: 50px auto;
+     
+    
+        padding: 10px;
+      
+        }
+   
+    }
+</style>
+<body>
+    <div class="card">
+        <h3>Enter any word</h3>
+        <input type="text"  id="inp" placeholder="text here">
+        <div class="one">
+            <img src="" id="img" >
+        </div>
+        <button onclick="run()">Generate picture</button>
+    </div>
+    <script>
+        let img=document.getElementById("img");
+        let input=document.getElementById("inp");
+  
+function run(){
+    let word=input.value;
+    img.style.display = "block";
+    img.src="https://source.unsplash.com/300x300/?"+word;
+    input.value=null;
+}
+    </script>
+</body>
+</html>
